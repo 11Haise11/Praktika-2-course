@@ -2,9 +2,10 @@
 #include <fstream>
 #include <vector>
 #include <iomanip>
+#include "10.h"
 using namespace std;
 
-const int PRICE_PER_SEAT = 300; // Цена одного билета
+const int PRICE_PER_SEAT = 300; 
 
 void loadHall(vector<vector<bool>>& hall, int n, int m) {
     ifstream file("hall.txt");
@@ -58,7 +59,7 @@ bool bookSeat(vector<vector<bool>>& hall, int row, int seat) {
     return true;
 }
 
-int main() {
+int task10() {
     int n, m;
     cout << "Введите количество рядов: ";
     cin >> n;

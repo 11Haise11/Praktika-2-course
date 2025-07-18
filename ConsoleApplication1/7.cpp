@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "7.h"
 using namespace std;
 
 struct Student {
@@ -29,7 +30,7 @@ void findStudents(Student students[], int count, double avgWeightBoy, double avg
     }
 }
 
-int main() {
+int task7() {
     const int MAX_STUDENTS = 30;
     Student class[MAX_STUDENTS];
     int studentCount;

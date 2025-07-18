@@ -2,14 +2,13 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include "9.h"
 using namespace std;
 
-// Функция для нумерации строк
 string numberLine(int num, const string& line) {
     return to_string(num) + " " + line;
 }
 
-// Функция для преобразования цены в текст
 string priceToText(int price) {
     int rub = price / 100;
     int kop = price % 100;
@@ -17,14 +16,13 @@ string priceToText(int price) {
         (kop < 10 ? "0" + to_string(kop) : to_string(kop)) + " коп.";
 }
 
-int main() {
-    // Задача 1: Нумерация строк
+int task9() {
     string lines[] = { "Первая строка", "Вторая строка", "Третья строка" };
     for (int i = 0; i < 3; i++) {
         cout << numberLine(i + 1, lines[i]) << endl;
     }
 
-    // Задача 2: Обработка цен из файла
+ 
     ifstream fin("F1.txt");
     ofstream fout("F2.txt");
 

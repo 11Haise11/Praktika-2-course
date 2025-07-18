@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
-
-int main() {
+#include "2.h"
+int task2() {
     char choice;
 
     do {

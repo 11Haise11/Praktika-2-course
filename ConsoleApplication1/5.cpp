@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include "5.h"
 using namespace std;
 
 double my_pow(double num, int p) {
@@ -13,7 +14,7 @@ double my_pow(double num, int p) {
     return (p >= 0) ? res : 1.0 / res;
 }
 
-int main() {
+int task5() {
     cout << "  x   | x^2  | x^-1 | x^0" << endl;
     cout << "------|------|------|------" << endl;
 

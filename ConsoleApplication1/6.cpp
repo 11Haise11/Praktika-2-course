@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "6.h"
 using namespace std;
 
 bool has_negative(int arr[], int size) {
@@ -63,7 +64,7 @@ void get_after_negative(int src[], int src_size, int* dest, int& dest_size) {
     }
 }
 
-int main() {
+int task6() {
     const int MAX_SIZE = 100;
     int arr[MAX_SIZE];
     int size;

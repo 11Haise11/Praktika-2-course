@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <climits>
+#include "8.h"
 using namespace std;
 
 double calculateDistance(const vector<vector<int>>& matrix, int k, int l) {
@@ -30,7 +31,7 @@ pair<int, int> findMinDistanceRows(const vector<vector<int>>& matrix) {
     return result;
 }
 
-int main() {
+int task8() {
     int n, m;
     cout << "Введите количество строк (n) и столбцов (m): ";
     cin >> n >> m;

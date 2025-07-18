@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include "3.h"
 using namespace std;
 
 bool isSumOfCubes(int num) {
@@ -14,7 +15,7 @@ bool isSumOfCubes(int num) {
     return sum == original;
 }
 
-int main() {
+int task3() {
     char choice;
     do {
         int N1, N2;

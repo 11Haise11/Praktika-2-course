@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cmath>
+#include "4.h"
 using namespace std;
 
-int main() {
+int task4() {
     int N;
     double A, B;
 

@@ -2,6 +2,7 @@
 #include <vector>
 #include <iomanip>
 #include <string>
+#include "11.h"
 using namespace std;
 
 struct Product {
@@ -73,7 +74,7 @@ void calculateTotals(const vector<Product>& products) {
     cout << "Общая разница: " << totalReceived - totalSold << endl;
 }
 
-int main() {
+int task11() {
     vector<Product> products;
 
     inputProducts(products);
