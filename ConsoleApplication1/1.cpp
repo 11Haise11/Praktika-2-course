@@ -1,17 +1,13 @@
 #include <iostream>
 #include <cmath>
-#include <iomanip>
-
+using namespace std;
 int main() {
-    double D, d, cost;
-    std::cin >> D >> d >> cost;
-
-    const double PI = 3.14159265358979323846;
-    double length = PI * D;
-    int pearls = static_cast<int>(std::ceil(length / d));
-
-    std::cout.precision(6);
-    std::cout << pearls * cost << std::endl;
-
+    const double cost_per_meter = 29.0;
+    double D;
+    cout << "Введите диаметр отверстия D (в метрах): ";
+    cin >> D;
+    double circumference = M_PI * D;
+    double total_cost = circumference * cost_per_meter;
+    cout << "Стоимость окантовки отверстия: " << total_cost << " руб." << endl;
     return 0;
 }
