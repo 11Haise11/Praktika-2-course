@@ -1,51 +1,57 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
 #include <climits>
 #include "8.h"
 using namespace std;
 
-double calculateDistance(const vector<vector<int>>& matrix, int k, int l) {
-    double distance = 0.0;
-    for (size_t j = 0; j < matrix[0].size(); ++j) {
-        distance += matrix[k][j] * matrix[l][j];
+double computeRowDistance(const vector<vector<int>>& mat, int row1, int row2) {
+    double dist = 0.0;
+    int cols = mat[0].size();
+    for (int j = 0; j < cols; j++) {
+        dist += mat[row1][j] * mat[row2][j];
     }
-    return distance;
+    return dist;
 }
 
-pair<int, int> findMinDistanceRows(const vector<vector<int>>& matrix) {
-    int n = matrix.size();
-    double minDistance = INT_MAX;
-    pair<int, int> result = { 0, 1 };
+void findClosestRows(const vector<vector<int>>& mat, int& r1, int& r2) {
+    int rows = mat.size();
+    double minDist = INT_MAX;
+    r1 = 0;
+    r2 = 1;
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = i + 1; j < n; ++j) {
-            double currentDistance = calculateDistance(matrix, i, j);
-            if (currentDistance < minDistance) {
-                minDistance = currentDistance;
-                result = { i, j };
+    for (int i = 0; i < rows; i++) {
+        for (int j = i + 1; j < rows; j++) {
+            double currDist = computeRowDistance(mat, i, j);
+            if (currDist < minDist) {
+                minDist = currDist;
+                r1 = i;
+                r2 = j;
             }
         }
     }
-
-    return result;
 }
 
 int task8() {
-    int n, m;
-    cout << "Введите количество строк (n) и столбцов (m): ";
-    cin >> n >> m;
+    int rows, cols;
+    cout << "Введите количество строк и столбцов матрицы: ";
+    cin >> rows >> cols;
 
-    vector<vector<int>> matrix(n, vector<int>(m));
-    cout << "Введите элементы матрицы:" << endl;
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
+    vector<vector<int>> matrix(rows, vector<int>(cols));
+
+    cout << "Введите элементы матрицы (" << rows << "x" << cols << "):\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
             cin >> matrix[i][j];
         }
     }
 
-    auto [row1, row2] = findMinDistanceRows(matrix);
-    cout << "Минимальное расстояние между строками " << row1 << " и " << row2 << endl;
+    int row1, row2;
+    findClosestRows(matrix, row1, row2);
+    cout << "Строки с минимальным расстоянием: " << row1 + 1 << " и " << row2 + 1 << endl;
 
     return 0;
+}
+
+int task8p() {
+    return task8();
 }
