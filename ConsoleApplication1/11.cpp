@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <iomanip>
 #include <string>
@@ -13,26 +13,26 @@ struct Product {
 
 void inputProducts(vector<Product>& products) {
     int n;
-    cout << "Ââåäèòå êîëè÷åñòâî òîâàðîâ: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð¾Ð²: ";
     cin >> n;
     products.resize(n);
 
     for (int i = 0; i < n; ++i) {
-        cout << "\nÒîâàð #" << i + 1 << endl;
-        cout << "Íàèìåíîâàíèå: ";
+        cout << "\nÐ¢Ð¾Ð²Ð°Ñ€ #" << i + 1 << endl;
+        cout << "ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ: ";
         cin.ignore();
         getline(cin, products[i].name);
-        cout << "Ïîñòóïèëî çà ìåñÿö: ";
+        cout << "ÐŸÐ¾ÑÑ‚ÑƒÐ¿Ð¸Ð»Ð¾ Ð·Ð° Ð¼ÐµÑÑÑ†: ";
         cin >> products[i].received;
-        cout << "Ðåàëèçîâàíî çà ìåñÿö: ";
+        cout << "Ð ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð¾ Ð·Ð° Ð¼ÐµÑÑÑ†: ";
         cin >> products[i].sold;
     }
 }
 
 void printTurnoverReport(const vector<Product>& products) {
-    cout << "\nÎÁÎÐÎÒÍÀß ÂÅÄÎÌÎÑÒÜ\n";
+    cout << "\nÐžÐ‘ÐžÐ ÐžÐ¢ÐÐÐ¯ Ð’Ð•Ð”ÐžÐœÐžÐ¡Ð¢Ð¬\n";
     cout << "--------------------------------------------------------\n";
-    cout << "| Íàèìåíîâàíèå òîâàðà | Ïîñòóïèëî | Ðåàëèçîâàíî | Ðàçíèöà |\n";
+    cout << "| ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ‚Ð¾Ð²Ð°Ñ€Ð° | ÐŸÐ¾ÑÑ‚ÑƒÐ¿Ð¸Ð»Ð¾ | Ð ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð¾ | Ð Ð°Ð·Ð½Ð¸Ñ†Ð° |\n";
     cout << "--------------------------------------------------------\n";
 
     for (const auto& p : products) {
@@ -46,9 +46,9 @@ void printTurnoverReport(const vector<Product>& products) {
 }
 
 void printStockReport(const vector<Product>& products) {
-    cout << "\nÎÒ×ÅÒ ÎÁ ÎÑÒÀÒÊÀÕ ÍÀ ÑÊËÀÄÅ\n";
+    cout << "\nÐžÐ¢Ð§Ð•Ð¢ ÐžÐ‘ ÐžÐ¡Ð¢ÐÐ¢ÐšÐÐ¥ ÐÐ Ð¡ÐšÐ›ÐÐ”Ð•\n";
     cout << "------------------------------------\n";
-    cout << "| Íàèìåíîâàíèå òîâàðà | Îñòàòîê |\n";
+    cout << "| ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ‚Ð¾Ð²Ð°Ñ€Ð° | ÐžÑÑ‚Ð°Ñ‚Ð¾Ðº |\n";
     cout << "------------------------------------\n";
 
     for (const auto& p : products) {
@@ -68,10 +68,10 @@ void calculateTotals(const vector<Product>& products) {
         totalSold += p.sold;
     }
 
-    cout << "\nÈÒÎÃÎ:\n";
-    cout << "Îáùèé ïðèõîä òîâàðà: " << totalReceived << endl;
-    cout << "Îáùèé ðàñõîä òîâàðà: " << totalSold << endl;
-    cout << "Îáùàÿ ðàçíèöà: " << totalReceived - totalSold << endl;
+    cout << "\nÐ˜Ð¢ÐžÐ“Ðž:\n";
+    cout << "ÐžÐ±Ñ‰Ð¸Ð¹ Ð¿Ñ€Ð¸Ñ…Ð¾Ð´ Ñ‚Ð¾Ð²Ð°Ñ€Ð°: " << totalReceived << endl;
+    cout << "ÐžÐ±Ñ‰Ð¸Ð¹ Ñ€Ð°ÑÑ…Ð¾Ð´ Ñ‚Ð¾Ð²Ð°Ñ€Ð°: " << totalSold << endl;
+    cout << "ÐžÐ±Ñ‰Ð°Ñ Ñ€Ð°Ð·Ð½Ð¸Ñ†Ð°: " << totalReceived - totalSold << endl;
 }
 
 int task11() {

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <climits>
 #include "8.h"
@@ -33,12 +33,12 @@ void findClosestRows(const vector<vector<int>>& mat, int& r1, int& r2) {
 
 int task8() {
     int rows, cols;
-    cout << "Ââåäèòå êîëè÷åñòâî ñòðîê è ñòîëáöîâ ìàòðèöû: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¸ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð¾Ð² Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹: ";
     cin >> rows >> cols;
 
     vector<vector<int>> matrix(rows, vector<int>(cols));
 
-    cout << "Ââåäèòå ýëåìåíòû ìàòðèöû (" << rows << "x" << cols << "):\n";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ (" << rows << "x" << cols << "):\n";
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             cin >> matrix[i][j];
@@ -47,7 +47,7 @@ int task8() {
 
     int row1, row2;
     findClosestRows(matrix, row1, row2);
-    cout << "Ñòðîêè ñ ìèíèìàëüíûì ðàññòîÿíèåì: " << row1 + 1 << " è " << row2 + 1 << endl;
+    cout << "Ð¡Ñ‚Ñ€Ð¾ÐºÐ¸ Ñ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¼ Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸ÐµÐ¼: " << row1 + 1 << " Ð¸ " << row2 + 1 << endl;
 
     return 0;
 }

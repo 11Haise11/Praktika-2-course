@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <fstream>
 #include <vector>
 #include <iomanip>
@@ -52,11 +52,11 @@ void displayHall(const vector<vector<bool>>& hall) {
 bool bookSeat(vector<vector<bool>>& hall, int row, int seat) {
     if (row < 1 || row > static_cast<int>(hall.size()) ||
         seat < 1 || seat > static_cast<int>(hall[0].size())) {
-        cout << "Îøèáêà: íåâåðíûé íîìåð ìåñòà!\n";
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ð½ÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð¼ÐµÑÑ‚Ð°!\n";
         return false;
     }
     if (hall[row - 1][seat - 1]) {
-        cout << "Îøèáêà: ìåñòî óæå çàíÿòî!\n";
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ð¼ÐµÑÑ‚Ð¾ ÑƒÐ¶Ðµ Ð·Ð°Ð½ÑÑ‚Ð¾!\n";
         return false;
     }
     hall[row - 1][seat - 1] = true;
@@ -65,21 +65,21 @@ bool bookSeat(vector<vector<bool>>& hall, int row, int seat) {
 
 int task10() {
     int rows, cols;
-    cout << "Ñèñòåìà áðîíèðîâàíèÿ ìåñò\n";
-    cout << "Ââåäèòå êîëè÷åñòâî ðÿäîâ: ";
+    cout << "Ð¡Ð¸ÑÑ‚ÐµÐ¼Ð° Ð±Ñ€Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð¼ÐµÑÑ‚\n";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ€ÑÐ´Ð¾Ð²: ";
     cin >> rows;
-    cout << "Ââåäèòå êîëè÷åñòâî ìåñò â ðÿäó: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð² Ñ€ÑÐ´Ñƒ: ";
     cin >> cols;
 
     vector<vector<bool>> hall(rows, vector<bool>(cols, false));
     loadHallState(hall);
 
     while (true) {
-        cout << "\nÌåíþ:\n";
-        cout << "1. Ïîêàçàòü ñõåìó çàëà\n";
-        cout << "2. Çàáðîíèðîâàòü ìåñòî\n";
-        cout << "3. Âûõîä\n";
-        cout << "Âûáåðèòå äåéñòâèå: ";
+        cout << "\nÐœÐµÐ½ÑŽ:\n";
+        cout << "1. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ ÑÑ…ÐµÐ¼Ñƒ Ð·Ð°Ð»Ð°\n";
+        cout << "2. Ð—Ð°Ð±Ñ€Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¼ÐµÑÑ‚Ð¾\n";
+        cout << "3. Ð’Ñ‹Ñ…Ð¾Ð´\n";
+        cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 
         int choice;
         cin >> choice;
@@ -92,20 +92,20 @@ int task10() {
             break;
         case 2: {
             int row, seat;
-            cout << "Ââåäèòå íîìåð ðÿäà: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ€ÑÐ´Ð°: ";
             cin >> row;
-            cout << "Ââåäèòå íîìåð ìåñòà: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¼ÐµÑÑ‚Ð°: ";
             cin >> seat;
 
             if (bookSeat(hall, row, seat)) {
-                cout << "Ìåñòî " << row << "-" << seat << " çàáðîíèðîâàíî!\n";
-                cout << "Ñòîèìîñòü: " << SEAT_PRICE << " ðóá.\n";
+                cout << "ÐœÐµÑÑ‚Ð¾ " << row << "-" << seat << " Ð·Ð°Ð±Ñ€Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾!\n";
+                cout << "Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ: " << SEAT_PRICE << " Ñ€ÑƒÐ±.\n";
                 saveHallState(hall);
             }
             break;
         }
         default:
-            cout << "Íåâåðíûé âûáîð!\n";
+            cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€!\n";
         }
     }
 

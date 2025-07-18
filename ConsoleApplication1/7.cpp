@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <limits>
 #include <cctype>
@@ -13,21 +13,21 @@ struct Student {
 };
 
 void processStudents(Student students[], int count, double avgWeightBoy, double avgWeightGirl) {
-    cout << "Äåòè âûøå ñðåäíåé óïèòàííîñòè:\n";
+    cout << "Ð”ÐµÑ‚Ð¸ Ð²Ñ‹ÑˆÐµ ÑÑ€ÐµÐ´Ð½ÐµÐ¹ ÑƒÐ¿Ð¸Ñ‚Ð°Ð½Ð½Ð¾ÑÑ‚Ð¸:\n";
     for (int i = 0; i < count; ++i) {
         double avg = (toupper(students[i].gender) == 'M') ? avgWeightBoy : avgWeightGirl;
         if (students[i].weight > avg) {
             cout << students[i].surname << " (" << students[i].gender << "): "
-                << students[i].weight << " êã\n";
+                << students[i].weight << " ÐºÐ³\n";
         }
     }
 
-    cout << "\nÄåòè íèæå ñðåäíåé óïèòàííîñòè:\n";
+    cout << "\nÐ”ÐµÑ‚Ð¸ Ð½Ð¸Ð¶Ðµ ÑÑ€ÐµÐ´Ð½ÐµÐ¹ ÑƒÐ¿Ð¸Ñ‚Ð°Ð½Ð½Ð¾ÑÑ‚Ð¸:\n";
     for (int i = 0; i < count; ++i) {
         double avg = (toupper(students[i].gender) == 'M') ? avgWeightBoy : avgWeightGirl;
         if (students[i].weight < avg) {
             cout << students[i].surname << " (" << students[i].gender << "): "
-                << students[i].weight << " êã\n";
+                << students[i].weight << " ÐºÐ³\n";
         }
     }
 }
@@ -38,55 +38,55 @@ int task7() {
     int count;
     double boyAvg, girlAvg;
 
-    cout << "Êîëè÷åñòâî ó÷åíèêîâ (1-" << MAX_SIZE << "): ";
+    cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ¾Ð² (1-" << MAX_SIZE << "): ";
     while (!(cin >> count) || count < 1 || count > MAX_SIZE) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Îøèáêà! Ââåäèòå ÷èñëî îò 1 äî " << MAX_SIZE << ": ";
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 1 Ð´Ð¾ " << MAX_SIZE << ": ";
     }
 
     for (int i = 0; i < count; ++i) {
-        cout << "\nÓ÷åíèê #" << i + 1 << ":\n";
+        cout << "\nÐ£Ñ‡ÐµÐ½Ð¸Ðº #" << i + 1 << ":\n";
 
-        cout << "Ôàìèëèÿ: ";
+        cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ: ";
         cin.ignore();
         getline(cin, group[i].surname);
 
-        cout << "Ïîë (M/F): ";
+        cout << "ÐŸÐ¾Ð» (M/F): ";
         while (!(cin >> group[i].gender) ||
             (toupper(group[i].gender) != 'M' && toupper(group[i].gender) != 'F')) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Îøèáêà! Ââåäèòå M èëè F: ";
+            cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ M Ð¸Ð»Ð¸ F: ";
         }
 
-        cout << "Ðîñò (ñì): ";
+        cout << "Ð Ð¾ÑÑ‚ (ÑÐ¼): ";
         while (!(cin >> group[i].height) || group[i].height <= 0) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+            cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
         }
 
-        cout << "Âåñ (êã): ";
+        cout << "Ð’ÐµÑ (ÐºÐ³): ";
         while (!(cin >> group[i].weight) || group[i].weight <= 0) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+            cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
         }
     }
 
-    cout << "\nÑðåäíèé âåñ ìàëü÷èêîâ (êã): ";
+    cout << "\nÐ¡Ñ€ÐµÐ´Ð½Ð¸Ð¹ Ð²ÐµÑ Ð¼Ð°Ð»ÑŒÑ‡Ð¸ÐºÐ¾Ð² (ÐºÐ³): ";
     while (!(cin >> boyAvg) || boyAvg <= 0) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
     }
 
-    cout << "Ñðåäíèé âåñ äåâî÷åê (êã): ";
+    cout << "Ð¡Ñ€ÐµÐ´Ð½Ð¸Ð¹ Ð²ÐµÑ Ð´ÐµÐ²Ð¾Ñ‡ÐµÐº (ÐºÐ³): ";
     while (!(cin >> girlAvg) || girlAvg <= 0) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
     }
 
     processStudents(group, count, boyAvg, girlAvg);

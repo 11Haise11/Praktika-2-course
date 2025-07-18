@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <fstream>
 #include <string>
 #include <iomanip>
@@ -12,12 +12,12 @@ string numberLine(int num, const string& line) {
 string priceToText(int price) {
     int rub = price / 100;
     int kop = price % 100;
-    return to_string(rub) + " ðóá. " +
-        (kop < 10 ? "0" + to_string(kop) : to_string(kop)) + " êîï.";
+    return to_string(rub) + " Ñ€ÑƒÐ±. " +
+        (kop < 10 ? "0" + to_string(kop) : to_string(kop)) + " ÐºÐ¾Ð¿.";
 }
 
 int task9() {
-    string lines[] = { "Ïåðâàÿ ñòðîêà", "Âòîðàÿ ñòðîêà", "Òðåòüÿ ñòðîêà" };
+    string lines[] = { "ÐŸÐµÑ€Ð²Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°", "Ð’Ñ‚Ð¾Ñ€Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°", "Ð¢Ñ€ÐµÑ‚ÑŒÑ ÑÑ‚Ñ€Ð¾ÐºÐ°" };
     for (int i = 0; i < 3; i++) {
         cout << numberLine(i + 1, lines[i]) << endl;
     }
@@ -27,7 +27,7 @@ int task9() {
     ofstream fout("F2.txt");
 
     if (!fin.is_open() || !fout.is_open()) {
-        cerr << "Îøèáêà îòêðûòèÿ ôàéëîâ!" << endl;
+        cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð¾Ð²!" << endl;
         return 1;
     }
 
@@ -38,7 +38,7 @@ int task9() {
 
     fin.close();
     fout.close();
-    cout << "Îáðàáîòêà ôàéëîâ çàâåðøåíà!" << endl;
+    cout << "ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° Ñ„Ð°Ð¹Ð»Ð¾Ð² Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°!" << endl;
 
     return 0;
 }

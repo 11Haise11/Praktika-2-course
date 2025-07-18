@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cmath>
 #include "1.h"
 using namespace std;
@@ -6,10 +6,10 @@ int task1() {
     const double cost_per_meter = 29.0;
     double D;
     double PI = 3.14159265358979323846;
-    cout << "Ââåäèòå äèàìåòð îòâåðñòèÿ D (â ìåòðàõ): ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ Ð¾Ñ‚Ð²ÐµÑ€ÑÑ‚Ð¸Ñ D (Ð² Ð¼ÐµÑ‚Ñ€Ð°Ñ…): ";
     cin >> D;
     double circumference = PI * D;
     double total_cost = circumference * cost_per_meter;
-    cout << "Ñòîèìîñòü îêàíòîâêè îòâåðñòèÿ: " << total_cost << " ðóá." << endl;
+    cout << "Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¾ÐºÐ°Ð½Ñ‚Ð¾Ð²ÐºÐ¸ Ð¾Ñ‚Ð²ÐµÑ€ÑÑ‚Ð¸Ñ: " << total_cost << " Ñ€ÑƒÐ±." << endl;
     return 0;
 }

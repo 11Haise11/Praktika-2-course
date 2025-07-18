@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include "1.h"
 #include "2.h"
@@ -31,17 +31,17 @@ int main()
     };
 
     int choice;
-    std::cout << "Âûáåðèòå íîìåð çàäà÷è (îò 1 äî " << tasks.size() << "): ";
+    std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð´Ð°Ñ‡Ð¸ (Ð¾Ñ‚ 1 Ð´Ð¾ " << tasks.size() << "): ";
     std::cin >> choice;
 
     if (choice >= 1 && choice <= static_cast<int>(tasks.size()))
     {
-        std::cout << "Âûïîëíåíèå çàäà÷è " << choice << ":\n";
+        std::cout << "Ð’Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ " << choice << ":\n";
         tasks[choice - 1]();  
     }
     else
     {
-        std::cout << "Íåâåðíûé íîìåð çàäà÷è.\n";
+        std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð´Ð°Ñ‡Ð¸.\n";
     }
 
     return 0;

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include "6.h"
@@ -29,7 +29,7 @@ int sum_before_negative(int arr[], int size) {
 
 void input_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
-        cout << "Ýëåìåíò " << i << ": ";
+        cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚ " << i << ": ";
         cin >> arr[i];
     }
 }
@@ -69,34 +69,34 @@ int task6() {
     int arr[MAX_SIZE];
     int size;
 
-    cout << "Ââåäèòå ðàçìåð ìàññèâà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
     cin >> size;
 
     input_array(arr, size);
-    cout << "Ìàññèâ: ";
+    cout << "ÐœÐ°ÑÑÐ¸Ð²: ";
     print_array(arr, size);
 
     if (has_negative(arr, size)) {
-        cout << "Îòðèöàòåëüíûå åñòü" << endl;
-        cout << "Äî ïåðâîãî îòðèöàòåëüíîãî: " << count_before_negative(arr, size) << endl;
-        cout << "Ñóììà äî ïåðâîãî îòðèöàòåëüíîãî: " << sum_before_negative(arr, size) << endl;
+        cout << "ÐžÑ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ ÐµÑÑ‚ÑŒ" << endl;
+        cout << "Ð”Ð¾ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð³Ð¾: " << count_before_negative(arr, size) << endl;
+        cout << "Ð¡ÑƒÐ¼Ð¼Ð° Ð´Ð¾ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð³Ð¾: " << sum_before_negative(arr, size) << endl;
     }
     else {
-        cout << "Îòðèöàòåëüíûõ íåò" << endl;
+        cout << "ÐžÑ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ð½ÐµÑ‚" << endl;
     }
 
     remove_before_negative(arr, size);
-    cout << "Ïîñëå óäàëåíèÿ: ";
+    cout << "ÐŸÐ¾ÑÐ»Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: ";
     print_array(arr, size);
 
     generate_array(arr, size);
-    cout << "Ñãåíåðèðîâàííûé ìàññèâ: ";
+    cout << "Ð¡Ð³ÐµÐ½ÐµÑ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: ";
     print_array(arr, size);
 
     int new_arr[MAX_SIZE];
     int new_size;
     get_after_negative(arr, size, new_arr, new_size);
-    cout << "Ýëåìåíòû ïîñëå ïåðâîãî îòðèöàòåëüíîãî: ";
+    cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¿Ð¾ÑÐ»Ðµ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð³Ð¾: ";
     print_array(new_arr, new_size);
 
     return 0;
